@@ -70,7 +70,10 @@ public class LunarClient {
         if (crashReportIn.getFile() != null) {
             file = crashReportIn.getFile().getPath();
         }
-        JOptionPane.showMessageDialog(null, "Game crashed!\n" +
+
+        JFrame jf = new JFrame();
+        jf.setAlwaysOnTop(true);
+        JOptionPane.showMessageDialog(jf, "Game crashed!\n" +
                         "\nDon't report this to Moonsworth\n" +
                         "Error dumped: " + file + "\n" +
                         "Please create a issue: \n" + GitUtils.remote.toString().split("\\.git")[0] + "/issues/new\n" +
